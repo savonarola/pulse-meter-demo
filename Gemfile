@@ -1,6 +1,7 @@
-source :rubygems
+source 'https://rubygems.org'
 
 gem 'activesupport', require: 'active_support/all'
+gem 'i18n'
 gem 'capistrano'
 gem 'capistrano_colors'
 gem 'foreman'
