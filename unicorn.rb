@@ -7,7 +7,7 @@ preload_app false
 timeout 30
 
 working_directory CURRENT
-listen "#{SHARED}/tmp/sockets/unicorn.sock", :backlog => 2048  
+listen "#{CURRENT}/tmp/unicorn.sock", :backlog => 2048  
 
 PID = "#{SHARED}/pids/unicorn.pid"
 pid PID
