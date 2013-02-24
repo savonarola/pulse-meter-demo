@@ -73,7 +73,7 @@ layout = PulseMeter::Visualizer.draw do |l|
       w.sensor :web_request_mobile_1day
       w.sensor :web_request_other_1day
 
-      w.show_last_point false
+      w.show_last_point true
       w.values_label "Count"
       w.width 10
     end
