@@ -37,7 +37,7 @@ sensors = PulseMeter::Sensor::Configuration.new(
     }
   },
 
-  web_request_count_1minute: {
+  web_request_time_1minute_percentiles: {
     sensor_type: 'timelined/multi_percentile',
     args: {
       interval: 1.minute,
