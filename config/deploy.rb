@@ -10,6 +10,8 @@ set :use_sudo, false
 
 role :app, "rubybox.ru"
 
+after "deploy:restart", "deploy:restart_upstart"
+
 namespace :deploy do
   task :restart_upstart do
     run "sudo restart rubybox-pulse_meter_demo"
