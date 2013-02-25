@@ -28,7 +28,7 @@ sensors = PulseMeter::Sensor::Configuration.new(
       interval: 5.minutes,
       ttl: 1.week,
       p: [0.9, 0.95, 0.99],
-      annotation: 'Purchase api calls'
+      annotation: 'time'
     }
   },
 
@@ -47,7 +47,7 @@ sensors = PulseMeter::Sensor::Configuration.new(
       interval: 1.minute,
       ttl: 1.week,
       p: [0.9, 0.95, 0.99],
-      annotation: 'Web request time'
+      annotation: 'time'
     }
   },
 
