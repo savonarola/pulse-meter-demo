@@ -74,8 +74,11 @@ sensors = PulseMeter::Sensor::Configuration.new(
   web_request_other_1day: {
     sensor_type: 'timelined/uniq_counter',
     args: {interval: 1.day, ttl: 1.month, annotation: 'Other'}
-  }
+  },
 
+  queue_size: {
+    sensor_type: 'indicator'
+  }
 )
 
 browsers = [
@@ -101,6 +104,7 @@ while true
 
   sensors.web_request_time_1minute_percentiles(Random.rand * 10)
   sensors.web_request_count_1minute(1)
+  sensors.queue_size(Random.rand(100))
 end
 
 

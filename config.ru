@@ -75,7 +75,18 @@ layout = PulseMeter::Visualizer.draw do |l|
 
       w.show_last_point true
       w.values_label "Count"
-      w.width 10
+      w.width 5
+    end
+    
+    p.gauge "Unprocessed orders queue size" do |g|
+      g.redraw_interval 5
+      g.values_label 'Count'
+      g.width 5
+
+      g.red_from 50
+      g.minor_ticks 5
+
+      g.sensor :queue_size
     end
   end
 end
