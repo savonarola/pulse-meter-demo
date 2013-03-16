@@ -84,6 +84,7 @@ layout = PulseMeter::Visualizer.draw do |l|
       g.width 5
 
       g.red_from 50
+      g.red_to 100
       g.minor_ticks 5
 
       g.sensor :queue_size

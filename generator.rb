@@ -78,15 +78,26 @@ sensors = PulseMeter::Sensor::Configuration.new(
 
   queue_size: {
     sensor_type: 'indicator'
+    args: {annotation: 'Queue Size'}
   }
 )
 
 browsers = [
   :web_request_ff_1day,
+  :web_request_ff_1day,
+  :web_request_ff_1day,
+  :web_request_ff_1day,
   :web_request_chrome_1day,
+  :web_request_chrome_1day,
+  :web_request_chrome_1day,
+  :web_request_chrome_1day,
+  :web_request_ie_1day,
+  :web_request_ie_1day,
   :web_request_ie_1day,
   :web_request_opera_1day,
   :web_request_mobile_1day,
+  :web_request_mobile_1day,
+  :web_request_other_1day,
   :web_request_other_1day
 ]
 
