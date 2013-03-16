@@ -77,7 +77,7 @@ sensors = PulseMeter::Sensor::Configuration.new(
   },
 
   queue_size: {
-    sensor_type: 'indicator'
+    sensor_type: 'indicator',
     args: {annotation: 'Queue Size'}
   }
 )
