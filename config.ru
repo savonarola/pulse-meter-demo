@@ -45,26 +45,6 @@ layout = PulseMeter::Visualizer.draw do |l|
   end
 
   l.page "Requests" do |p|
-    p.line "Web requests" do |w|
-      w.sensor :web_request_count_1minute
-      w.timespan 1.hour
-      w.redraw_interval 10
-
-      w.show_last_point false
-      w.values_label "Count"
-      w.width 5
-    end
-
-    p.line "Web requests" do |w|
-      w.sensor :web_request_time_1minute_percentiles
-      w.timespan 1.hour
-      w.redraw_interval 10
-
-      w.show_last_point false
-      w.values_label "Time, ms"
-      w.width 5
-    end
-
     p.pie "Web requests, browsers" do |w|
       w.sensor :web_request_ff_1day
       w.sensor :web_request_chrome_1day
@@ -89,6 +69,47 @@ layout = PulseMeter::Visualizer.draw do |l|
 
       g.sensor :queue_size
     end
+
+    p.line "Web requests" do |w|
+      w.sensor :web_request_count_1minute
+      w.timespan 1.hour
+      w.redraw_interval 10
+
+      w.show_last_point false
+      w.values_label "Count"
+      w.width 5
+    end
+
+    p.line "Web requests" do |w|
+      w.sensor :web_request_time_1minute_percentiles
+      w.timespan 1.hour
+      w.redraw_interval 10
+
+      w.show_last_point false
+      w.values_label "Time, ms"
+      w.width 5
+    end
+
+    p.table "Web requests count per minute" do |w|
+      w.sensor :web_request_count_1minute
+      w.timespan 1.hour
+      w.redraw_interval 10
+
+      w.show_last_point false
+      w.values_label "Count"
+      w.width 5
+    end
+
+    p.table "Web requests times" do |w|
+      w.sensor :web_request_time_1minute_percentiles
+      w.timespan 1.hour
+      w.redraw_interval 10
+
+      w.show_last_point false
+      w.values_label "Count"
+      w.width 5
+    end
+
   end
 end
 
