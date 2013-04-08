@@ -32,7 +32,7 @@ layout = PulseMeter::Visualizer.draw do |l|
       w.width 5
     end
 
-    p.line "Purchase api response time" do |w|
+    p.area "Purchase api response time" do |w|
       w.sensor :purchase_response_time_per_5minute_pecentiles
 
       w.timespan 1.hour
@@ -70,6 +70,16 @@ layout = PulseMeter::Visualizer.draw do |l|
       g.sensor :queue_size
     end
 
+    p.area "Web requests" do |w|
+      w.sensor :web_request_time_1minute_percentiles
+      w.timespan 1.hour
+      w.redraw_interval 10
+
+      w.show_last_point false
+      w.values_label "Time, ms"
+      w.width 10
+    end
+
     p.line "Web requests" do |w|
       w.sensor :web_request_count_1minute
       w.timespan 1.hour
@@ -77,16 +87,6 @@ layout = PulseMeter::Visualizer.draw do |l|
 
       w.show_last_point false
       w.values_label "Count"
-      w.width 5
-    end
-
-    p.line "Web requests" do |w|
-      w.sensor :web_request_time_1minute_percentiles
-      w.timespan 1.hour
-      w.redraw_interval 10
-
-      w.show_last_point false
-      w.values_label "Time, ms"
       w.width 5
     end
 
