@@ -1,5 +1,5 @@
-APP_PATH = "/Users/sergeyaveryanov/git/pulse-meter-demo"
-CURRENT = File.join(APP_PATH, '')
+APP_PATH = "/home/av/pulse_meter_demo"
+CURRENT = File.join(APP_PATH, 'current')
 SHARED = File.join(APP_PATH, 'shared')
 
 worker_processes 5
@@ -7,8 +7,7 @@ preload_app false
 timeout 30
 
 working_directory CURRENT
-listen 3000
-#listen "#{CURRENT}/tmp/unicorn.sock", :backlog => 2048  
+listen "#{CURRENT}/tmp/unicorn.sock", :backlog => 2048  
 
 PID = "#{SHARED}/pids/unicorn.pid"
 pid PID
