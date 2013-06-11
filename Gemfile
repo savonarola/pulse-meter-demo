@@ -5,6 +5,6 @@ gem 'i18n'
 gem 'capistrano'
 gem 'capistrano_colors'
 gem 'foreman'
-gem 'pulse-meter', require: 'pulse-meter/visualizer'
+gem 'pulse-meter', github: 'savonarola/pulse-meter', require: 'pulse-meter/visualizer'
 gem 'unicorn'
 
