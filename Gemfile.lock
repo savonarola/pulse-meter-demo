@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/savonarola/pulse-meter.git
-  revision: 388c0437bb46221bd5e63bb9ef4af1322a52867a
+  revision: cbf322616c949cccc33d94be7a1c86069e7cc0c6
   specs:
     pulse-meter (0.4.8)
       gon-sinatra
