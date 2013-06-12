@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/savonarola/pulse-meter.git
-  revision: 6afa8d1da24d4db03c974a6570828cd0b719f67b
+  revision: 388c0437bb46221bd5e63bb9ef4af1322a52867a
   specs:
     pulse-meter (0.4.8)
       gon-sinatra
@@ -55,7 +55,7 @@ GEM
     sinatra-partial (0.4.0)
       sinatra
     terminal-table (1.4.5)
-    thor (0.17.0)
+    thor (0.18.1)
     tilt (1.4.1)
     unicorn (4.5.0)
       kgio (~> 2.6)
