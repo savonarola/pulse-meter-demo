@@ -51,6 +51,7 @@ GEM
       sinatra
       sinatra-partial
     rack (1.5.2)
+    rack-git-version (0.0.3)
     rack-protection (1.5.0)
       rack
     raindrops (0.10.0)
@@ -79,4 +80,5 @@ DEPENDENCIES
   foreman
   i18n
   pulse-meter!
+  rack-git-version
   unicorn
