@@ -113,6 +113,6 @@ layout = PulseMeter::Visualizer.draw do |l|
   end
 end
 
-run layout.to_app
+run Rack::GitVersion.new(layout.to_app)
 
 
