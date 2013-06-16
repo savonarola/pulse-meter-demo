@@ -1,16 +1,10 @@
 GIT
   remote: git://github.com/savonarola/pulse-meter.git
-  revision: cbf322616c949cccc33d94be7a1c86069e7cc0c6
+  revision: 8e7c8eb2664add88596eea3f2ab3bffd3a199f18
   specs:
-    pulse-meter (0.4.8)
-      gon-sinatra
-      haml
-      json
-      redis
-      sinatra
-      sinatra-partial
-      terminal-table
-      thor
+    pulse-meter (0.4.11)
+      pulse-meter-cli
+      pulse-meter-visualizer
 
 GEM
   remote: https://rubygems.org/
@@ -43,6 +37,19 @@ GEM
     net-ssh (2.6.5)
     net-ssh-gateway (1.2.0)
       net-ssh (>= 2.6.5)
+    pulse-meter-cli (0.4.10)
+      pulse-meter-core
+      terminal-table
+      thor
+    pulse-meter-core (0.4.12)
+      json
+      redis
+    pulse-meter-visualizer (0.4.10)
+      gon-sinatra
+      haml
+      pulse-meter-core
+      sinatra
+      sinatra-partial
     rack (1.5.2)
     rack-protection (1.5.0)
       rack
