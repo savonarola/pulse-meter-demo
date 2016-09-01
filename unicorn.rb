@@ -1,15 +1,15 @@
-APP_PATH = "/home/av/pulse_meter_demo"
-CURRENT = File.join(APP_PATH, 'current')
-SHARED = File.join(APP_PATH, 'shared')
+APP_PATH = "/home/av/pulse-meter.rubybox.ru"
+CURRENT = APP_PATH
+SHARED = APP_PATH
 
 worker_processes 5
 preload_app false
 timeout 30
 
 working_directory CURRENT
-listen "#{CURRENT}/tmp/unicorn.sock", :backlog => 2048  
+listen "#{CURRENT}/run/unicorn.sock", :backlog => 2048
 
-PID = "#{SHARED}/pids/unicorn.pid"
+PID = "#{SHARED}/run/unicorn.pid"
 pid PID
 stderr_path "#{SHARED}/log/unicorn.log"
 stdout_path "#{SHARED}/log/unicorn.log"
