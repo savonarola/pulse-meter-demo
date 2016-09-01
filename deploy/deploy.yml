@@ -1,5 +1,4 @@
 - user: av
-  sudo: no
   hosts: all
   gather_facts: no
   tasks:
@@ -8,18 +7,35 @@
       dest: pulse-meter.rubybox.ru
       accept_hostkey: yes
       version: ansible
-  - file: pulse-meter.rubybox.ru/log state=directory mode=0755
-  - file: pulse-meter.rubybox.ru/run state=directory mode=0755
+  - file: path=pulse-meter.rubybox.ru/log state=directory mode=0755
+  - file: path=pulse-meter.rubybox.ru/run state=directory mode=0755
   - shell: bundle install --deployment chdir=pulse-meter.rubybox.ru
 
 
 - user: av
-  sudo: yes
+  become: root
   hosts: all
   gather_facts: no
+  vars:
+    nginx_available: /etc/nginx/sites-available
+    nginx_enabled: /etc/nginx/sites-enabled
+    home: /home/av
   tasks:
   - file:
       src: /home/av/pulse-meter.rubybox.ru/deploy/pulse-meter-demo.service
       dest: /etc/systemd/system/pulse-meter-demo.service
       state: link
+  - file:
+      src: "{{ home }}/{{ item }}/{{ item }}.conf"
+      dest: "{{ nginx_available }}/{{ item }}.conf"
+      state: link
+    with_items:
+    - pulse-meter.rubybox.ru
+  - file:
+      src: "{{ nginx_available }}/{{ item }}.conf"
+      dest: "{{ nginx_enabled }}/{{ item }}.conf"
+      state: link
+    with_items:
+    - pulse-meter.rubybox.ru
   - shell: systemctl restart pulse-meter-demo
+  - service: name=nginx state=restarted enabled=yes
