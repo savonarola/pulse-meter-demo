@@ -6,7 +6,7 @@
       repo: git@github.com:savonarola/pulse-meter-demo.git
       dest: pulse-meter.rubybox.ru
       accept_hostkey: yes
-      version: ansible
+      version: master
       force: yes
   - file: path=pulse-meter.rubybox.ru/log state=directory mode=0755
   - file: path=pulse-meter.rubybox.ru/run state=directory mode=0755
