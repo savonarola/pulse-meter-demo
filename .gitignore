@@ -1,3 +1,5 @@
 *.sw?
 /.bundle
 /vendor
+/log
+/run
