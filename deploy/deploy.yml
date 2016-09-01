@@ -8,7 +8,10 @@
       dest: pulse-meter.rubybox.ru
       accept_hostkey: yes
       version: ansible
+  - file: pulse-meter.rubybox.ru/log state=directory mode=0755
+  - file: pulse-meter.rubybox.ru/run state=directory mode=0755
   - shell: bundle install --deployment chdir=pulse-meter.rubybox.ru
+
 
 - user: av
   sudo: yes
@@ -19,4 +22,4 @@
       src: /home/av/pulse-meter.rubybox.ru/deploy/pulse-meter-demo.service
       dest: /etc/systemd/system/pulse-meter-demo.service
       state: link
-
+  - shell: systemctl restart pulse-meter-demo
