@@ -1,0 +1,11 @@
+[Unit]
+Description=PulseMeter demo
+After=redis.service
+
+[Service]
+User=av
+WorkingDirectory=/home/av/pulse-meter.rubybox.ru
+ExecStart=bundle exec foreman start
+
+[Install]
+WantedBy=multi-user.target
