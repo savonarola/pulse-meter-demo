@@ -7,7 +7,7 @@
       repo: git@github.com:savonarola/pulse-meter-demo.git
       dest: pulse-meter.rubybox.ru
       accept_hostkey: yes
-      branch: ansible
+      version: ansible
   - shell: bundle install --deployment chdir=pulse-meter.rubybox.ru
 
 - user: av

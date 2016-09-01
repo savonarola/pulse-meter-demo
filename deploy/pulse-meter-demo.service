@@ -5,7 +5,7 @@ After=redis.service
 [Service]
 User=av
 WorkingDirectory=/home/av/pulse-meter.rubybox.ru
-ExecStart=bundle exec foreman start
+ExecStart=/usr/local/bin/bundle exec foreman start
 
 [Install]
 WantedBy=multi-user.target
