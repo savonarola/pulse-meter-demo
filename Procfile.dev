@@ -1,0 +1,3 @@
+unicorn: bundle exec rackup config.ru
+generator: bundle exec ruby generator.rb
+
